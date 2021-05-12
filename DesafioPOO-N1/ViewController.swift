@@ -11,7 +11,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         bora()
     }
     func bora() {
@@ -31,8 +30,7 @@ class ViewController: UIViewController {
         listaFuncionarios.append(viviane)
 
         for funcionario in listaFuncionarios {
-            funcionario.setSalarioLiquido()
-            funcionario.exibeResumo()
+            funcionario.printaResumo()
         }
     }
 }

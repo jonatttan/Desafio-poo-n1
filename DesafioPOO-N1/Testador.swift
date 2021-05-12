@@ -7,8 +7,17 @@
 
 import Foundation
 
-class Testador: Funcionario {
+class Testador: Funcionario, FuncionarioProtocol {
+    var percDesconto: Double?
+    
     override init(_ nome: String, _ salario: Double) {
         super.init(nome, salario)
+        percDesconto = salario > 2500.0 ? 0.25 : 0.15
+    }
+    override func printaResumo() {
+        super.printaResumo()
+        print("Salário líquido \(getSalarioLiquidoSuper(percDesconto ?? 0))")
+        print("Cargo: Testador")
+        print("")
     }
 }
