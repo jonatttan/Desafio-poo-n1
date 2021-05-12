@@ -22,28 +22,19 @@ class Funcionario {
             calculoSalarioLiquido(funcionario.salario, desconto)
     }
     func verificaDesconto(_ salario: Double, _ cargo: String) -> Double{
-        if cargo == "desenvolvedor" {
-            if salario > 3000.0 {
-                return 0.20
-            } else {
-                return 0.10
-            }
+        
+        switch cargo {
+        case "desenvolvedor":
+            return salario > 3000.0 ? 0.20 : 0.10
+        case "dba":
+            return salario > 2500.0 ? 0.25 : 0.15
+        case "testador":
+            return salario > 2500.0 ? 0.25 : 0.15
+        case "gerente":
+            return salario > 7000.0 ? 0.23 : 0.18
+        default:
+            return 0
         }
-        if cargo == "dba" || cargo == "testador" {
-            if salario > 2500.0 {
-                return 0.25
-            } else {
-                return 0.15
-            }
-        }
-        if cargo == "gerente" {
-            if salario > 7000.0 {
-                return 0.23
-            } else {
-                return 0.18
-            }
-        }
-        return 0
     }
     func verificaCargo(_ funcionario: Funcionario) -> String {
         if funcionario is Desenvolvedor {
