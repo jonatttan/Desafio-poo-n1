@@ -14,7 +14,6 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         bora()
     }
-    
     func bora() {
         var listaFuncionarios: [Funcionario] = []
 
@@ -36,6 +35,4 @@ class ViewController: UIViewController {
             funcionario.exibeResumo()
         }
     }
-    
 }
-

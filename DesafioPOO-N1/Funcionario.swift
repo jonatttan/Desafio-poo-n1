@@ -63,3 +63,18 @@ class Funcionario {
         print("")
     }
 }
+
+extension Funcionario {
+    func retornaSalarioLiquido() -> Double {
+        return salarioLiquido
+    }
+    func retornaNome() -> String {
+        return nome
+    }
+    func retornaSalario() -> Double {
+        return salario
+    }
+    func retornaCargo() -> String {
+        return verificaCargo(self)
+    }
+}

@@ -21,6 +21,7 @@
 		8980D004264C530E00C058BD /* Dba.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8980D003264C530E00C058BD /* Dba.swift */; };
 		8980D00C264C535200C058BD /* Testador.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8980D00B264C535200C058BD /* Testador.swift */; };
 		8980D014264C537000C058BD /* Gerente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8980D013264C537000C058BD /* Gerente.swift */; };
+		8980D030264C6C5000C058BD /* FuncionarioTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8980D02F264C6C5000C058BD /* FuncionarioTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		8980D003264C530E00C058BD /* Dba.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dba.swift; sourceTree = "<group>"; };
 		8980D00B264C535200C058BD /* Testador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testador.swift; sourceTree = "<group>"; };
 		8980D013264C537000C058BD /* Gerente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gerente.swift; sourceTree = "<group>"; };
+		8980D02F264C6C5000C058BD /* FuncionarioTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncionarioTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 		8980CFD8264C2CCA00C058BD /* DesafioPOO-N1Tests */ = {
 			isa = PBXGroup;
 			children = (
+				8980D02F264C6C5000C058BD /* FuncionarioTest.swift */,
 				8980CFD9264C2CCA00C058BD /* DesafioPOO_N1Tests.swift */,
 				8980CFDB264C2CCA00C058BD /* Info.plist */,
 			);
@@ -295,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8980CFDA264C2CCA00C058BD /* DesafioPOO_N1Tests.swift in Sources */,
+				8980D030264C6C5000C058BD /* FuncionarioTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
