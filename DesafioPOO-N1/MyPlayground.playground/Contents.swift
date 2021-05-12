@@ -1,27 +1,22 @@
 import UIKit
 
 class Funcionario {
-    var nome: String
-    var salario: Double
-    var salarioLiquido: Double
+    private var nome: String
+    private var salario: Double
+    private var salarioLiquido: Double
     
-    init() {
-        self.nome = ""
-        self.salario = 0
-        self.salarioLiquido = 0
-    }
     init(_ nome: String, _ salario: Double) {
         self.nome = nome
         self.salario = salario
         self.salarioLiquido = 0
     }
-    public func setSalarioLiquido(_ funcionario: Funcionario) {
-        let cargo = verificaCargo(funcionario)
-        let desconto = verificaDesconto(funcionario.salario, cargo)
-        funcionario.salarioLiquido =
-            calculoSalarioLiquido(funcionario.salario, desconto)
+    func setSalarioLiquido() {
+        let cargo = verificaCargo(self)
+        let desconto = verificaDesconto(salario, cargo)
+        salarioLiquido =
+            calculoSalarioLiquido(salario, desconto)
     }
-    func verificaDesconto(_ salario: Double, _ cargo: String) -> Double{
+    private func verificaDesconto(_ salario: Double, _ cargo: String) -> Double{
         
         switch cargo {
         case "desenvolvedor":
@@ -36,7 +31,7 @@ class Funcionario {
             return 0
         }
     }
-    func verificaCargo(_ funcionario: Funcionario) -> String {
+    private func verificaCargo(_ funcionario: Funcionario) -> String {
         if funcionario is Desenvolvedor {
             return "desenvolvedor"
         }
@@ -51,7 +46,7 @@ class Funcionario {
         }
         return "Sem Definicao"
     }
-    func calculoSalarioLiquido(_ salario: Double, _ desconto: Double) -> Double {
+    private func calculoSalarioLiquido(_ salario: Double, _ desconto: Double) -> Double {
         return salario - (salario * desconto)
     }
     func exibeResumo() {
@@ -71,37 +66,16 @@ class Desenvolvedor: Funcionario {
 class Dba: Funcionario {
     override init(_ nome: String, _ salario: Double) {
         super.init(nome, salario)
-        if salario > 0 {
-            if salario > 2500 {
-                self.salarioLiquido = calculoSalarioLiquido(salario, 0.25)
-            } else {
-                self.salarioLiquido = calculoSalarioLiquido(salario, 0.15)
-            }
-        }
     }
 }
 class Testador: Funcionario {
     override init(_ nome: String, _ salario: Double) {
         super.init(nome, salario)
-        if salario > 0 {
-            if salario > 2500 {
-                self.salarioLiquido = calculoSalarioLiquido(salario, 0.25)
-            } else {
-                self.salarioLiquido = calculoSalarioLiquido(salario, 0.15)
-            }
-        }
     }
 }
 class Gerente: Funcionario {
     override init(_ nome: String, _ salario: Double) {
         super.init(nome, salario)
-        if salario > 0 {
-            if salario > 7000 {
-                self.salarioLiquido = calculoSalarioLiquido(salario, 0.23)
-            } else {
-                self.salarioLiquido = calculoSalarioLiquido(salario, 0.18)
-            }
-        }
     }
 }
 
@@ -121,7 +95,9 @@ let viviane = Gerente("Viviane Cabral", 8000)
 listaFuncionarios.append(viviane)
 
 for funcionario in listaFuncionarios {
-    Funcionario().setSalarioLiquido(funcionario)
+    funcionario.setSalarioLiquido()
+}
+for funcionario in listaFuncionarios {
     funcionario.exibeResumo()
 }
 

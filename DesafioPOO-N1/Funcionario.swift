@@ -8,51 +8,36 @@
 import Foundation
 
 class Funcionario {
-    var nome: String
-    var salario: Double
-    var salarioLiquido: Double
+    private var nome: String
+    private var salario: Double
+    private var salarioLiquido: Double
     
-    init() {
-        self.nome = ""
-        self.salario = 0
-        self.salarioLiquido = 0
-    }
     init(_ nome: String, _ salario: Double) {
         self.nome = nome
         self.salario = salario
         self.salarioLiquido = 0
     }
-    public func setSalarioLiquido(_ funcionario: Funcionario) {
-        let cargo = verificaCargo(funcionario)
-        let desconto = verificaDesconto(funcionario.salario, cargo)
-        funcionario.salarioLiquido =
-            calculoSalarioLiquido(funcionario.salario, desconto)
+    func setSalarioLiquido() {
+        let cargo = verificaCargo(self)
+        let desconto = verificaDesconto(salario, cargo)
+        salarioLiquido =
+            calculoSalarioLiquido(salario, desconto)
     }
-    func verificaDesconto(_ salario: Double, _ cargo: String) -> Double{
-        if cargo == "desenvolvedor" {
-            if salario > 3000.0 {
-                return 0.20
-            } else {
-                return 0.10
-            }
+    private func verificaDesconto(_ salario: Double, _ cargo: String) -> Double {
+        switch cargo {
+        case "desenvolvedor":
+            return salario > 3000.0 ? 0.20 : 0.10
+        case "dba":
+            return salario > 2500.0 ? 0.25 : 0.15
+        case "testador":
+            return salario > 2500.0 ? 0.25 : 0.15
+        case "gerente":
+            return salario > 7000.0 ? 0.23 : 0.18
+        default:
+            return 0
         }
-        if cargo == "dba" || cargo == "testador" {
-            if salario > 2500.0 {
-                return 0.25
-            } else {
-                return 0.15
-            }
-        }
-        if cargo == "gerente" {
-            if salario > 7000.0 {
-                return 0.23
-            } else {
-                return 0.18
-            }
-        }
-        return 0
     }
-    func verificaCargo(_ funcionario: Funcionario) -> String {
+    private func verificaCargo(_ funcionario: Funcionario) -> String {
         if funcionario is Desenvolvedor {
             return "desenvolvedor"
         }
@@ -67,7 +52,7 @@ class Funcionario {
         }
         return "Sem Definicao"
     }
-    func calculoSalarioLiquido(_ salario: Double, _ desconto: Double) -> Double {
+    private func calculoSalarioLiquido(_ salario: Double, _ desconto: Double) -> Double {
         return salario - (salario * desconto)
     }
     func exibeResumo() {

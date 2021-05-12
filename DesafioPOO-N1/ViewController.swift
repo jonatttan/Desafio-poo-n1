@@ -32,10 +32,10 @@ class ViewController: UIViewController {
         listaFuncionarios.append(viviane)
 
         for funcionario in listaFuncionarios {
-            Funcionario().setSalarioLiquido(funcionario)
+            funcionario.setSalarioLiquido()
             funcionario.exibeResumo()
         }
     }
-
+    
 }
 

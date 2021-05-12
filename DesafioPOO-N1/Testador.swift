@@ -10,12 +10,5 @@ import Foundation
 class Testador: Funcionario {
     override init(_ nome: String, _ salario: Double) {
         super.init(nome, salario)
-        if salario > 0 {
-            if salario > 2500 {
-                self.salarioLiquido = calculoSalarioLiquido(salario, 0.25)
-            } else {
-                self.salarioLiquido = calculoSalarioLiquido(salario, 0.15)
-            }
-        }
     }
 }
