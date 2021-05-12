@@ -20,12 +20,6 @@ class Funcionario {
         self.nome = nome
         self.salario = salario
     }
-    func getSalario() -> Double {
-        return salario
-    }
-    func getNome() -> String {
-        return nome
-    }
     func getSalarioLiquidoSuper(_ perc: Double) -> Double {
         return salario - (salario * perc)
     }
