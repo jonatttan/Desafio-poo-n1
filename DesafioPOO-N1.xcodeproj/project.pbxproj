@@ -42,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		89574058264DA78100604B95 /* TestWillSet-DidSet.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "TestWillSet-DidSet.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8980CFBC264C2CC700C058BD /* DesafioPOO-N1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesafioPOO-N1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8980CFBF264C2CC700C058BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8980CFC1264C2CC700C058BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +129,7 @@
 				8980CFD0264C2CCA00C058BD /* Info.plist */,
 				8980CFC8264C2CC700C058BD /* DesafioPOO_N1.xcdatamodeld */,
 				8980CFF5264C2D0D00C058BD /* MyPlayground.playground */,
+				89574058264DA78100604B95 /* TestWillSet-DidSet.playground */,
 			);
 			path = "DesafioPOO-N1";
 			sourceTree = "<group>";
