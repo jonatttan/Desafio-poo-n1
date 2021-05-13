@@ -8,9 +8,8 @@
 import Foundation
 
 public protocol FuncionarioProtocol {
-//    func getSalarioLiquido() -> Double
+    func getSalarioLiquido() -> Double
     func printaResumo()
-    var percDesconto: Double? { get }
 }
 class Funcionario {
     private var nome: String
@@ -20,13 +19,19 @@ class Funcionario {
         self.nome = nome
         self.salario = salario
     }
-    func getSalarioLiquidoSuper(_ perc: Double) -> Double {
-        return salario - (salario * perc)
+    func getNome() -> String {
+        return nome
     }
-    func printaResumo() {
-        print("")
-        print("Colaborador: \(nome)")
-        print("Salário bruto: \(salario)")
-        
+    func getSalario() -> Double {
+        return salario
     }
+//    func getSalarioLiquidoSuper(_ perc: Double) -> Double {
+//        return salario - (salario * perc)
+//    }
+//    func printaResumo() {
+//        print("")
+//        print("Colaborador: \(nome)")
+//        print("Salário bruto: \(salario)")
+//
+//    }
 }

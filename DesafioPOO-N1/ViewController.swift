@@ -14,22 +14,41 @@ class ViewController: UIViewController {
         bora()
     }
     func bora() {
-        var listaFuncionarios: [Funcionario] = []
-
+        var listaDesenvolvedores: [Desenvolvedor] = []
+        var listaDba: [Dba] = []
+        var listaTestadores: [Testador] = []
+        var listaGerentes: [Gerente] = []
+        
         let jorge = Desenvolvedor("Jorge Matias", 2500)
-        listaFuncionarios.append(jorge)
+        listaDesenvolvedores.append(jorge)
         let fernando = Desenvolvedor("Ferndo Oliveira", 3500)
-        listaFuncionarios.append(fernando)
+        listaDesenvolvedores.append(fernando)
         let lilian = Dba("Lilian Vieira", 2000)
-        listaFuncionarios.append(lilian)
+        listaDba.append(lilian)
         let vinicius = Testador("Vinicius Garcia", 3000)
-        listaFuncionarios.append(vinicius)
+        listaTestadores.append(vinicius)
         let matias = Gerente("Matias Dourado", 6000)
-        listaFuncionarios.append(matias)
+        listaGerentes.append(matias)
         let viviane = Gerente("Viviane Cabral", 8000)
-        listaFuncionarios.append(viviane)
-
-        for funcionario in listaFuncionarios {
+        listaGerentes.append(viviane)
+        
+        // DEV
+        for funcionario in listaDesenvolvedores {
+            funcionario.printaResumo()
+        }
+        
+        // DBA
+        for funcionario in listaDba {
+            funcionario.printaResumo()
+        }
+        
+        // TESTERS
+        for funcionario in listaTestadores {
+            funcionario.printaResumo()
+        }
+        
+        // MANAGERS
+        for funcionario in listaGerentes {
             funcionario.printaResumo()
         }
     }

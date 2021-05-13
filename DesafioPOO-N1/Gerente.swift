@@ -8,16 +8,20 @@
 import Foundation
 
 class Gerente: Funcionario, FuncionarioProtocol {
-    var percDesconto: Double?
-    
     override init(_ nome: String, _ salario: Double) {
         super.init(nome, salario)
-        percDesconto = salario > 7000.0 ? 0.23 : 0.18
+        // salario > 7000.0 ? 0.23 : 0.18
     }
-    override func printaResumo() {
-        super.printaResumo()
-        print("Salário líquido \(getSalarioLiquidoSuper(percDesconto ?? 0))")
+    func getSalarioLiquido() -> Double {
+        let pagamento = getSalario()
+        let percDesconto = pagamento > 7000.0 ? 0.23 : 0.18
+        return pagamento - (pagamento * percDesconto)
+    }
+    func printaResumo() {
+        print("Nome: \(getNome())")
         print("Cargo: Gerente")
+        print("Salário bruto: \(getSalario())")
+        print("Salário líquido \(getSalarioLiquido())")
         print("")
     }
 }
