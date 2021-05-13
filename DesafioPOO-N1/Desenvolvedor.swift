@@ -11,16 +11,15 @@ class Desenvolvedor: Funcionario, FuncionarioProtocol {
     override init(_ nome: String, _ salario: Double) {
         super.init(nome, salario)
     }
-    func getSalarioLiquido() -> Double {
+    override func getSalarioLiquido() -> Double {
         let pagamento = getSalario()
         let percDesconto = pagamento > 3000.0 ? 0.20 : 0.10
         return pagamento - (pagamento * percDesconto)
     }
-    func printaResumo() {
-        print("Nome: \(getNome())")
+    override func printaResumo() {
+        super.printaResumo()
         print("Cargo: Desenvolvedor")
-        print("Salário bruto: \(getSalario())")
-        print("Salário líquido \(getSalarioLiquido())")
+        print("Salário líquido \(getSalarioLiquido().formatDolar)")
         print("")
     }
 //    override func printaResumo() {

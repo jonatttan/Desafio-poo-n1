@@ -25,13 +25,24 @@ class Funcionario {
     func getSalario() -> Double {
         return salario
     }
-//    func getSalarioLiquidoSuper(_ perc: Double) -> Double {
-//        return salario - (salario * perc)
-//    }
-//    func printaResumo() {
-//        print("")
-//        print("Colaborador: \(nome)")
-//        print("Salário bruto: \(salario)")
-//
-//    }
+    func getSalarioLiquido() -> Double {
+        return salario - (salario * 0.8)
+    }
+    func printaResumo() {
+        print("Colaborador: \(nome)")
+        print("Salário bruto: \(salario.formatDolar)")
+    }
+}
+
+public extension Double {
+    
+    var formatDolar: String { return formatadorDolar(valor: self) }
+    func formatadorDolar(valor: Double) -> String {
+        let valorNS = NSNumber(value: valor)
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.currencyCode = "USD"
+        guard let valorFormatado = formatter.string(from: valorNS) else { return ""}
+        return valorFormatado
+    }
 }

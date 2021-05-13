@@ -14,42 +14,31 @@ class ViewController: UIViewController {
         bora()
     }
     func bora() {
-        var listaDesenvolvedores: [Desenvolvedor] = []
-        var listaDba: [Dba] = []
-        var listaTestadores: [Testador] = []
-        var listaGerentes: [Gerente] = []
+        var listaFuncionarios: [Funcionario] = []
+        let listaCriaObjetos = [["GER","Silvonei Razuke",4500.0],["GER","Viviane Cabral",8000.0],["GER","Matias Dourado",6000.0],["TEST","Vinicius Garcia",3000.0],["DBA","Lilian Vieira",2000.0],["DEV","Ferndo Oliveira",3500.0],["DEV","Jorge Matias",2500.0],["DEV","Claudinei Santos",5000.0],["DEV","Silvana Amorim",1500.0],["DEV","Geovana Silva",2500.0],["DEV","Bianca Torres",3800.0],["DBA","Luana Silva",1500.0],["DBA","Bianca Torres",3800.0]]
         
-        let jorge = Desenvolvedor("Jorge Matias", 2500)
-        listaDesenvolvedores.append(jorge)
-        let fernando = Desenvolvedor("Ferndo Oliveira", 3500)
-        listaDesenvolvedores.append(fernando)
-        let lilian = Dba("Lilian Vieira", 2000)
-        listaDba.append(lilian)
-        let vinicius = Testador("Vinicius Garcia", 3000)
-        listaTestadores.append(vinicius)
-        let matias = Gerente("Matias Dourado", 6000)
-        listaGerentes.append(matias)
-        let viviane = Gerente("Viviane Cabral", 8000)
-        listaGerentes.append(viviane)
-        
-        // DEV
-        for funcionario in listaDesenvolvedores {
+        print("Total de funcionarios: \(listaFuncionarios.count)")
+        for registro in listaCriaObjetos {
+            guard let cargo = registro[0] as? String else { return }
+            guard let nome = registro[1] as? String else { return }
+            guard let salario = registro[2] as? Double else { return }
+            if cargo == "DEV" {
+                listaFuncionarios.append(Desenvolvedor(nome, salario))
+            }
+            if cargo == "DBA" {
+                listaFuncionarios.append(Dba(nome, salario))
+            }
+            if cargo == "TEST" {
+                listaFuncionarios.append(Testador(nome, salario))
+            }
+            if cargo == "GER" {
+                listaFuncionarios.append(Gerente(nome, salario))
+            }
+        }
+        // FUNCIONARIOS
+        for funcionario in listaFuncionarios {
             funcionario.printaResumo()
         }
-        
-        // DBA
-        for funcionario in listaDba {
-            funcionario.printaResumo()
-        }
-        
-        // TESTERS
-        for funcionario in listaTestadores {
-            funcionario.printaResumo()
-        }
-        
-        // MANAGERS
-        for funcionario in listaGerentes {
-            funcionario.printaResumo()
-        }
+        print("Total de funcionarios: \(listaFuncionarios.count)")
     }
 }

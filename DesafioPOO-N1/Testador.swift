@@ -12,16 +12,15 @@ class Testador: Funcionario, FuncionarioProtocol {
         super.init(nome, salario)
         // salario > 2500.0 ? 0.25 : 0.15
     }
-    func getSalarioLiquido() -> Double {
+    override func getSalarioLiquido() -> Double {
         let pagamento = getSalario()
         let percDesconto = pagamento > 2500.0 ? 0.25 : 0.15
         return pagamento - (pagamento * percDesconto)
     }
-    func printaResumo() {
-        print("Nome: \(getNome())")
+    override func printaResumo() {
+        super.printaResumo()
         print("Cargo: Testador")
-        print("Salário bruto: \(getSalario())")
-        print("Salário líquido \(getSalarioLiquido())")
+        print("Salário líquido \(getSalarioLiquido().formatDolar)")
         print("")
     }
 }
