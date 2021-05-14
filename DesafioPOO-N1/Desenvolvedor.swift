@@ -8,26 +8,9 @@
 import Foundation
 
 class Desenvolvedor: Funcionario, FuncionarioProtocol {
-    override init(_ nome: String, _ salario: Double) {
-        super.init(nome, salario)
+    override init(_ nome: String, _ salario: Double, calculadora: Calculadora = Calculadora(200.0)) {
+        super.init(nome, salario, calculadora: CalculadoraDev(salario))
+        // salario > 3000.0 ? 0.20 : 0.10
     }
-    override func getSalarioLiquido() -> Double {
-        let pagamento = getSalario()
-        let percDesconto = pagamento > 3000.0 ? 0.20 : 0.10
-        return pagamento - (pagamento * percDesconto)
-    }
-    override func printaResumo() {
-        super.printaResumo()
-        print("Cargo: Desenvolvedor")
-        print("Salário líquido \(getSalarioLiquido().formatDolar)")
-        print("")
-    }
-//    override func printaResumo() {
-//        print("Colaborador: \(getNome())")
-//        print("Cargo: Desenvolvedor")
-//        print("Salário bruto: \(getSalario())")
-//        print("Salário líquido \(getSalarioLiquidoSuper(percDesconto ?? 0))")
-//        print("")
-//    }
 }
 

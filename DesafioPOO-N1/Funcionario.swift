@@ -14,10 +14,12 @@ public protocol FuncionarioProtocol {
 class Funcionario {
     private var nome: String
     private var salario: Double
+    var funcCalculo: Calculadora
     
-    init(_ nome: String, _ salario: Double) {
+    init(_ nome: String, _ salario: Double, calculadora: Calculadora = Calculadora(200.0)) {
         self.nome = nome
         self.salario = salario
+        self.funcCalculo = calculadora
     }
     func getNome() -> String {
         return nome
@@ -30,7 +32,10 @@ class Funcionario {
     }
     func printaResumo() {
         print("Colaborador: \(nome)")
+        print("Cargo: \(type(of: self))")
         print("Salário bruto: \(salario.formatDolar)")
+        print("Salário líquido: \(self.funcCalculo.descontosDefault().formatDolar)")
+        print("")
     }
 }
 

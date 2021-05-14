@@ -8,19 +8,8 @@
 import Foundation
 
 class Dba: Funcionario, FuncionarioProtocol {
-    override init(_ nome: String, _ salario: Double) {
-        super.init(nome, salario)
+    override init(_ nome: String, _ salario: Double, calculadora: Calculadora = Calculadora(200.0)) {
+        super.init(nome, salario, calculadora: CalculadoraDba(salario))
         // salario > 2500.0 ? 0.25 : 0.15
-    }
-    override func getSalarioLiquido() -> Double {
-        let pagamento = getSalario()
-        let percDesconto = pagamento > 2500.0 ? 0.25 : 0.15
-        return pagamento - (pagamento * percDesconto)
-    }
-    override func printaResumo() {
-        super.printaResumo()
-        print("Cargo: Dba")
-        print("Salário líquido \(getSalarioLiquido().formatDolar)")
-        print("")
     }
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89574063264EB50700604B95 /* Calculadora.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89574062264EB50700604B95 /* Calculadora.swift */; };
+		8957406B264EDE9E00604B95 /* CadastroDeFuncionarios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8957406A264EDE9E00604B95 /* CadastroDeFuncionarios.swift */; };
 		8980CFC0264C2CC700C058BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8980CFBF264C2CC700C058BD /* AppDelegate.swift */; };
 		8980CFC2264C2CC700C058BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8980CFC1264C2CC700C058BD /* SceneDelegate.swift */; };
 		8980CFC4264C2CC700C058BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8980CFC3264C2CC700C058BD /* ViewController.swift */; };
@@ -43,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		89574058264DA78100604B95 /* TestWillSet-DidSet.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "TestWillSet-DidSet.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		89574062264EB50700604B95 /* Calculadora.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculadora.swift; sourceTree = "<group>"; };
+		8957406A264EDE9E00604B95 /* CadastroDeFuncionarios.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroDeFuncionarios.swift; sourceTree = "<group>"; };
 		8980CFBC264C2CC700C058BD /* DesafioPOO-N1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesafioPOO-N1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8980CFBF264C2CC700C058BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8980CFC1264C2CC700C058BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,7 +124,9 @@
 				8980D003264C530E00C058BD /* Dba.swift */,
 				8980D00B264C535200C058BD /* Testador.swift */,
 				8980D013264C537000C058BD /* Gerente.swift */,
+				89574062264EB50700604B95 /* Calculadora.swift */,
 				8980CFC3264C2CC700C058BD /* ViewController.swift */,
+				8957406A264EDE9E00604B95 /* CadastroDeFuncionarios.swift */,
 				8980CFC1264C2CC700C058BD /* SceneDelegate.swift */,
 				8980CFBF264C2CC700C058BD /* AppDelegate.swift */,
 				8980CFC5264C2CC700C058BD /* Main.storyboard */,
@@ -284,10 +290,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8980CFC4264C2CC700C058BD /* ViewController.swift in Sources */,
+				89574063264EB50700604B95 /* Calculadora.swift in Sources */,
 				8980CFFA264C529500C058BD /* Funcionario.swift in Sources */,
 				8980CFCA264C2CC700C058BD /* DesafioPOO_N1.xcdatamodeld in Sources */,
 				8980D004264C530E00C058BD /* Dba.swift in Sources */,
 				8980CFC0264C2CC700C058BD /* AppDelegate.swift in Sources */,
+				8957406B264EDE9E00604B95 /* CadastroDeFuncionarios.swift in Sources */,
 				8980CFFF264C52EE00C058BD /* Desenvolvedor.swift in Sources */,
 				8980CFC2264C2CC700C058BD /* SceneDelegate.swift in Sources */,
 				8980D014264C537000C058BD /* Gerente.swift in Sources */,
