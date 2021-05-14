@@ -19,7 +19,7 @@ class Dba: Funcionario, FuncionarioProtocol {
     }
     override func printaResumo() {
         super.printaResumo()
-        print("Cargo: Dba")
+        print("Cargo: DBA")
         print("Salário líquido \(getSalarioLiquido().formatDolar)")
         print("")
     }
