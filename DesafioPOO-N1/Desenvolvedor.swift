@@ -18,7 +18,6 @@ class Desenvolvedor: Funcionario, FuncionarioProtocol {
     }
     override func printaResumo() {
         super.printaResumo()
-        print("Cargo: Desenvolvedor")
         print("Salário líquido \(getSalarioLiquido().formatDolar)")
         print("")
     }

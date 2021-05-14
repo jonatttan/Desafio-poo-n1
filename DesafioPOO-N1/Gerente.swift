@@ -19,7 +19,6 @@ class Gerente: Funcionario, FuncionarioProtocol {
     }
     override func printaResumo() {
         super.printaResumo()
-        print("Cargo: Gerente")
         print("Salário líquido \(getSalarioLiquido().formatDolar)")
         print("")
     }

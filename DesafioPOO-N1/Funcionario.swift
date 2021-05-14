@@ -30,6 +30,7 @@ class Funcionario {
     }
     func printaResumo() {
         print("Colaborador: \(nome)")
+        print("Cargo: \(type(of: self))")
         print("Salário bruto: \(salario.formatDolar)")
     }
 }
